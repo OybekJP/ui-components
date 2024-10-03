@@ -20,17 +20,34 @@ export const ButtonDemo = () => {
       </Section>
 
       <Section>
-        <SectionTitle>ボタンをリンクとして使った例</SectionTitle>
+        <SectionTitle>
+          ボタンをリンクとして使った例（リンク先はtargetで指定済み）
+        </SectionTitle>
         <DemoRow>
           <Label>アイコン無しのリンクの例</Label>
           <ButtonGroup>
-            <Button as="a" href="https://example.com" variant="primary">
+            <Button
+              as="a"
+              href="https://example.com"
+              variant="primary"
+              target="_blank"
+            >
               Hello
             </Button>
-            <Button as="a" href="https://example.com" variant="secondary">
+            <Button
+              as="a"
+              href="https://example.com"
+              variant="secondary"
+              target="_blank"
+            >
               Hello
             </Button>
-            <Button as="a" href="https://example.com" variant="tertiary">
+            <Button
+              as="a"
+              href="https://example.com"
+              variant="tertiary"
+              target="_blank"
+            >
               Hello
             </Button>
           </ButtonGroup>
@@ -45,6 +62,7 @@ export const ButtonDemo = () => {
               variant="primary"
               icon={<ArrowRightIcon size={16} />}
               iconPosition="right"
+              target="_blank"
             >
               Subscribe
             </Button>
