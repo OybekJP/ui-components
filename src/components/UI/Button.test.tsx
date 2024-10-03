@@ -23,4 +23,11 @@ describe('Button Component', () => {
     expect(button).toBeInTheDocument()
     expect(icon).toBeVisible()
   })
+
+  test('disabledが付与された場合ボタンがdisabledになるか確認', () => {
+    render(<Button disabled>Disabled</Button>)
+
+    const button = screen.getByRole('button')
+    expect(button).toBeDisabled()
+  })
 })
