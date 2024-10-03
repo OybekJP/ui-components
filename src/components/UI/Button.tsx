@@ -1,11 +1,27 @@
 import styled from '@emotion/styled'
-import { ReactNode } from 'react'
+import { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
 
 interface BaseButtonProps {
   variant?: ButtonVariant
+  isLoading?: boolean
+  icon?: ReactNode
+  iconPosition?: 'left' | 'right'
 }
+
+type ButtonAsButton = BaseButtonProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseButtonProps> & {
+    as?: 'button'
+  }
+
+type ButtonAsLink = BaseButtonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseButtonProps> & {
+    as: 'a'
+    href: string
+  }
+
+type ButtonProps = ButtonAsButton | ButtonAsLink
 
 const StyledButton = styled('button')<BaseButtonProps>`
   display: inline-flex;
@@ -54,12 +70,32 @@ const getVariantStyles = (variant: ButtonVariant) => {
 
 const Button = ({
   children,
-  variant = 'primary',
-}: {
-  children: ReactNode
-  variant?: ButtonVariant
-}) => {
-  return <StyledButton variant={variant}>{children}</StyledButton>
+  icon,
+  iconPosition = 'left',
+  ...props
+}: ButtonProps) => {
+  const content = (
+    <>
+      {icon && iconPosition === 'left' && (
+        <span className="icon-left">{icon}</span>
+      )}
+      {children}
+      {icon && iconPosition === 'right' && (
+        <span className="icon-right">{icon}</span>
+      )}
+    </>
+  )
+
+  if ((props as ButtonAsLink).as === 'a') {
+    const { as, ...linkProps } = props as ButtonAsLink
+    return (
+      <StyledButton as="a" {...linkProps}>
+        {content}
+      </StyledButton>
+    )
+  }
+
+  return <StyledButton {...(props as ButtonAsButton)}>{content}</StyledButton>
 }
 
 export default Button
