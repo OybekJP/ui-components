@@ -10,4 +10,17 @@ describe('Button Component', () => {
     expect(button).toHaveTextContent(/^Primary Button$/)
     expect(button).toBeInTheDocument()
   })
+
+  test('アイコンがあるボタンが表示されるか確認', () => {
+    render(
+      <Button icon={<span>🚀</span>} iconPosition="left">
+        Launch
+      </Button>
+    )
+    const icon = screen.getByText(/🚀/)
+    const button = screen.getByText(/Launch/)
+    expect(icon).toBeInTheDocument()
+    expect(button).toBeInTheDocument()
+    expect(icon).toBeVisible()
+  })
 })
