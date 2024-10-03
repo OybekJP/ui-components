@@ -5,6 +5,8 @@ export const ButtonDemo = () => {
   return (
     <Container>
       <Button>Hello</Button>
+      <Button variant="secondary">Hello</Button>
+      <Button variant="tertiary">Hello</Button>
     </Container>
   )
 }
