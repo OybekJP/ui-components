@@ -34,6 +34,11 @@ const StyledButton = styled('button')<BaseButtonProps>`
   transition: all 0.2s;
 
   ${({ variant = 'primary' }) => getVariantStyles(variant)}
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px #7cabf7;
+  }
 `
 
 const getVariantStyles = (variant: ButtonVariant) => {
