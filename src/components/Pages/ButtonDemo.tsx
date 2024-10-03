@@ -13,7 +13,7 @@ export const ButtonDemo = () => {
       <Section>
         <SectionTitle>ボタンのパターン</SectionTitle>
         <ButtonGroup>
-          <Button>Hello</Button>
+          <Button disabled>Hello</Button>
           <Button variant="secondary">Hello</Button>
           <Button variant="tertiary">Hello</Button>
         </ButtonGroup>
@@ -59,6 +59,19 @@ export const ButtonDemo = () => {
             Submit Form
           </Button>
         </form>
+      </Section>
+
+      <Section>
+        <SectionTitle>disabledの時のボタンの例</SectionTitle>
+        <ButtonGroup>
+          <Button disabled>Hello</Button>
+          <Button variant="secondary" disabled>
+            Hello
+          </Button>
+          <Button variant="tertiary" disabled>
+            Hello
+          </Button>
+        </ButtonGroup>
       </Section>
     </Container>
   )
