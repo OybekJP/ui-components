@@ -1,15 +1,17 @@
 # Buttonコンポーネントの実装とテスト
 このプロジェクトでは、ReactとTypeScriptを使用してカスタムボタンコンポーネントを実装しました。このボタンコンポーネントは、さまざまなスタイルや機能を持つことができ、使用する際の柔軟性を提供します。また、Emotionを使用してスタイリングを行い、Jestを使用してテストを作成しました。
 
+こちらからliveで確認できます：https://ui-components-oybek.netlify.app/
+
 ## 結果のスクショ
 <img width="807" alt="image" src="https://github.com/user-attachments/assets/a86f2bc4-7e62-473b-bce1-08af4abb0865">
-
 
 ## 使用技術
 - React: UIライブラリ
 - TypeScript: 型安全なJavaScript
 - Jest: テスティングフレームワーク
 - Emotion: CSS-in-JSライブラリ
+- Netlifyを利用して公開
 
 ## 特徴
 - バリアントのサポート: ボタンはprimary、secondary、tertiaryのスタイルを持つことができます。
