@@ -1,5 +1,7 @@
+import { ButtonDemo } from './components/Pages/ButtonDemo';
+
 function App() {
-  return <>hello</>;
+  return <ButtonDemo />;
 }
 
 export default App;
