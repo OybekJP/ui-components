@@ -44,6 +44,32 @@ const StyledButton = styled('button')<BaseButtonProps>`
     opacity: 0.4;
     cursor: not-allowed;
   }
+
+  ${({ isLoading }) =>
+    isLoading &&
+    `
+    position: relative;
+    color: transparent;
+    cursor: wait;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      color: gray;
+      width: 16px;
+      height: 16px;
+      border: 2px solid;
+      border-radius: 50%;
+      border-color: currentColor transparent currentColor transparent;
+      animation: button-spin 0.8s linear infinite;
+    }
+  `}
+
+  @keyframes button-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `
 
 const getVariantStyles = (variant: ButtonVariant) => {
