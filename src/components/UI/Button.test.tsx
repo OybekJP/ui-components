@@ -30,4 +30,14 @@ describe('Button Component', () => {
     const button = screen.getByRole('button')
     expect(button).toBeDisabled()
   })
+
+  test('anchorとして指定された時リンクが入っているか確認', () => {
+    render(
+      <Button as="a" href="https://example.com">
+        Go to Example
+      </Button>
+    )
+    const link = screen.getByRole('link')
+    expect(link).toHaveAttribute('href', 'https://example.com')
+  })
 })
