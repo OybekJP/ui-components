@@ -13,7 +13,7 @@ export const ButtonDemo = () => {
       <Section>
         <SectionTitle>ボタンのパターン</SectionTitle>
         <ButtonGroup>
-          <Button disabled>Hello</Button>
+          <Button>Hello</Button>
           <Button variant="secondary">Hello</Button>
           <Button variant="tertiary">Hello</Button>
         </ButtonGroup>
