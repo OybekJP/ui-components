@@ -5,7 +5,9 @@ import Button from './Button'
 describe('Button Component', () => {
   test('ボタンをレンダリングして表示されるか確認', async () => {
     render(<Button variant="primary">Primary Button</Button>)
-    const button = await screen.findByRole('Primary Button')
+
+    const button = await screen.findByRole('button')
+    expect(button).toHaveTextContent(/^Primary Button$/)
     expect(button).toBeInTheDocument()
   })
 })
