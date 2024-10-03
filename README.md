@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Buttonコンポーネントの実装とテスト
+このプロジェクトでは、ReactとTypeScriptを使用してカスタムボタンコンポーネントを実装しました。このボタンコンポーネントは、さまざまなスタイルや機能を持つことができ、使用する際の柔軟性を提供します。また、Emotionを使用してスタイリングを行い、Jestを使用してテストを作成しました。
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 結果のスクショ
+<img width="807" alt="image" src="https://github.com/user-attachments/assets/a86f2bc4-7e62-473b-bce1-08af4abb0865">
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 使用技術
+- React: UIライブラリ
+- TypeScript: 型安全なJavaScript
+- Jest: テスティングフレームワーク
+- Emotion: CSS-in-JSライブラリ
 
-## Expanding the ESLint configuration
+## 特徴
+- バリアントのサポート: ボタンはprimary、secondary、tertiaryのスタイルを持つことができます。
+- アイコンの位置: ボタンにはアイコンを左または右に配置することができます。
+- ローディング状態: ボタンがローディング中は、テキストが透明になり、スピナーが表示されます。
+- リンクボタン: as="a"プロパティを使用することで、リンクとしてレンダリングできます。
+- 無効状態: ボタンが無効の時には、スタイルが変わります。
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## テストの実行
+テストは以下のコマンドで実行できます。
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+npx jest
 ```
+テストケースがすべてパスしたことを示すスクリーンショットを以下に示します。
+<img width="525" alt="スクリーンショット 2024-10-04 2 17 08" src="https://github.com/user-attachments/assets/2aa74dcf-c560-4d56-aee4-b3363844c513">
+
