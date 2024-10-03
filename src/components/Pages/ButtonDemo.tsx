@@ -3,6 +3,11 @@ import Button from '../UI/Button'
 import { ArrowRightIcon } from 'lucide-react'
 
 export const ButtonDemo = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    alert('フォームを送信しました！')
+  }
+
   return (
     <Container>
       <Section>
@@ -45,6 +50,15 @@ export const ButtonDemo = () => {
             </Button>
           </ButtonGroup>
         </DemoRow>
+      </Section>
+
+      <Section>
+        <SectionTitle>フォームを送信するボタンの例</SectionTitle>
+        <form onSubmit={handleSubmit}>
+          <Button type="submit" variant="primary">
+            Submit Form
+          </Button>
+        </form>
       </Section>
     </Container>
   )
