@@ -39,6 +39,11 @@ const StyledButton = styled('button')<BaseButtonProps>`
     outline: none;
     box-shadow: 0 0 0 5px #7cabf7;
   }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 `
 
 const getVariantStyles = (variant: ButtonVariant) => {
