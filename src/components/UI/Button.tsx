@@ -23,7 +23,7 @@ type ButtonAsLink = BaseButtonProps &
 
 type ButtonProps = ButtonAsButton | ButtonAsLink
 
-const StyledButton = styled('button')<BaseButtonProps>`
+const StyledButton = styled.button<BaseButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,8 @@ const StyledButton = styled('button')<BaseButtonProps>`
     }
   }
 `
+
+const StyledLink = styled(StyledButton.withComponent('a'))<BaseButtonProps>``
 
 const Text = styled.span`
   margin: auto 10px;
@@ -127,12 +129,8 @@ const Button = ({
   )
 
   if ((props as ButtonAsLink).as === 'a') {
-    const { as, ...linkProps } = props as ButtonAsLink
-    return (
-      <StyledButton as="a" {...linkProps}>
-        {content}
-      </StyledButton>
-    )
+    const { ...linkProps } = props as ButtonAsLink
+    return <StyledLink {...linkProps}>{content}</StyledLink>
   }
 
   return <StyledButton {...(props as ButtonAsButton)}>{content}</StyledButton>
