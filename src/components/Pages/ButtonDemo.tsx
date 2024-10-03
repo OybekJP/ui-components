@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Button from '../UI/Button'
+import { ArrowRightIcon } from 'lucide-react'
 
 export const ButtonDemo = () => {
   return (
@@ -11,6 +12,39 @@ export const ButtonDemo = () => {
           <Button variant="secondary">Hello</Button>
           <Button variant="tertiary">Hello</Button>
         </ButtonGroup>
+      </Section>
+
+      <Section>
+        <SectionTitle>ボタンをリンクとして使った例</SectionTitle>
+        <DemoRow>
+          <Label>アイコン無しのリンクの例</Label>
+          <ButtonGroup>
+            <Button as="a" href="https://example.com" variant="primary">
+              Hello
+            </Button>
+            <Button as="a" href="https://example.com" variant="secondary">
+              Hello
+            </Button>
+            <Button as="a" href="https://example.com" variant="tertiary">
+              Hello
+            </Button>
+          </ButtonGroup>
+        </DemoRow>
+
+        <DemoRow>
+          <Label>アイコンがある時のリンクの例</Label>
+          <ButtonGroup>
+            <Button
+              as="a"
+              href="https://example.com"
+              variant="primary"
+              icon={<ArrowRightIcon size={16} />}
+              iconPosition="right"
+            >
+              Subscribe
+            </Button>
+          </ButtonGroup>
+        </DemoRow>
       </Section>
     </Container>
   )
@@ -38,4 +72,16 @@ const ButtonGroup = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+`
+const DemoRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+`
+
+const Label = styled.span`
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
 `
