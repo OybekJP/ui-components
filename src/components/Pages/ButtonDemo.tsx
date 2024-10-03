@@ -73,6 +73,19 @@ export const ButtonDemo = () => {
           </Button>
         </ButtonGroup>
       </Section>
+
+      <Section>
+        <SectionTitle>loadingの時のボタンの例</SectionTitle>
+        <ButtonGroup>
+          <Button isLoading>Hello</Button>
+          <Button variant="secondary" isLoading>
+            Hello
+          </Button>
+          <Button variant="tertiary" isLoading>
+            Hello
+          </Button>
+        </ButtonGroup>
+      </Section>
     </Container>
   )
 }
