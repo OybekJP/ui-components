@@ -72,6 +72,10 @@ const StyledButton = styled('button')<BaseButtonProps>`
   }
 `
 
+const Text = styled.span`
+  margin: auto 10px;
+`
+
 const getVariantStyles = (variant: ButtonVariant) => {
   switch (variant) {
     case 'primary':
@@ -115,7 +119,7 @@ const Button = ({
       {icon && iconPosition === 'left' && (
         <span className="icon-left">{icon}</span>
       )}
-      {children}
+      <Text>{children}</Text>
       {icon && iconPosition === 'right' && (
         <span className="icon-right">{icon}</span>
       )}

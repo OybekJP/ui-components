@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Button from '../UI/Button'
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, PencilIcon } from 'lucide-react'
 
 export const ButtonDemo = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -103,6 +103,52 @@ export const ButtonDemo = () => {
             Hello
           </Button>
         </ButtonGroup>
+      </Section>
+
+      <Section>
+        <SectionTitle>アイコンがある時のボタンの例</SectionTitle>
+
+        <DemoRow>
+          <Label>左アイコン</Label>
+          <ButtonGroup>
+            <Button variant="primary" icon={<PencilIcon size={16} />}>
+              編集
+            </Button>
+            <Button variant="secondary" icon={<PencilIcon size={16} />}>
+              編集
+            </Button>
+            <Button variant="tertiary" icon={<PencilIcon size={16} />}>
+              編集
+            </Button>
+          </ButtonGroup>
+        </DemoRow>
+
+        <DemoRow>
+          <Label>右アイコン</Label>
+          <ButtonGroup>
+            <Button
+              variant="primary"
+              icon={<ArrowRightIcon size={16} />}
+              iconPosition="right"
+            >
+              次
+            </Button>
+            <Button
+              variant="secondary"
+              icon={<ArrowRightIcon size={16} />}
+              iconPosition="right"
+            >
+              次
+            </Button>
+            <Button
+              variant="tertiary"
+              icon={<ArrowRightIcon size={16} />}
+              iconPosition="right"
+            >
+              次
+            </Button>
+          </ButtonGroup>
+        </DemoRow>
       </Section>
     </Container>
   )
